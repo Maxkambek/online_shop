@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Welcome | {% endblock %}
+
+{% block content %}
+<div class="p-10 lg:p-20 text-center">
+<h2>Profile page </h2>
+<img style="width: 120px" src="{% static 'img.png' %}" class="img-thumbnail" alt="">
+    </div>
+<div class="container-fluid">
+    <div>
+    <h3>User information</h3>
+</div>
+<div>
+    <label>Username</label>
+    <h4>{{ request.user.username }}</h4>
+    <label>Email</label>
+    <h4>{{ request.user.email }}</h4>
+</div>
+
+
+<div>
+    <a href="{% url 'accounts:logout' %}"><button class="btn btn-danger" type="button"  >Log Out</button></a>
+</div>
+</div>
+
+{% endblock %}
